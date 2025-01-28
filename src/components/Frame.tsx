@@ -17,19 +17,34 @@ import { createStore } from "mipd";
 import { Label } from "~/components/ui/label";
 import { PROJECT_TITLE } from "~/lib/constants";
 
-function ExampleCard() {
+function CyberpunkCard() {
   return (
-    <Card className="border-neutral-200 bg-white">
-      <CardHeader>
-        <CardTitle className="text-neutral-900">Welcome to the Frame Template</CardTitle>
-        <CardDescription className="text-neutral-600">
-          This is an example card that you can customize or remove
+    <Card className="border-[1px] border-cyan-500 bg-black/80 shadow-lg shadow-cyan-500/50">
+      <CardHeader className="space-y-4">
+        <CardTitle className="text-cyan-400 font-mono text-center text-2xl tracking-wider">
+          SYSTEM_READY
+        </CardTitle>
+        <CardDescription className="text-cyan-300/70 font-mono text-center">
+          INITIALIZING_NEURAL_INTERFACE...
         </CardDescription>
       </CardHeader>
-      <CardContent className="text-neutral-800">
-        <p>
-          Your frame content goes here. The text is intentionally dark to ensure good readability.
-        </p>
+      <CardContent>
+        <div className="flex justify-center">
+          <a 
+            href={CYBERPUNK_VIDEO_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full"
+          >
+            <PurpleButton 
+              className="w-full bg-cyan-500 hover:bg-cyan-600 text-black font-mono text-xl py-6 
+                         border-2 border-cyan-400 shadow-lg shadow-cyan-500/50
+                         transition-all duration-300 hover:scale-105"
+            >
+              [ ENTER ]
+            </PurpleButton>
+          </a>
+        </div>
       </CardContent>
     </Card>
   );
@@ -135,9 +150,9 @@ export default function Frame(
         paddingRight: context?.client.safeAreaInsets?.right ?? 0,
       }}
     >
-      <div className="w-[300px] mx-auto py-2 px-2">
-        <h1 className="text-2xl font-bold text-center mb-4 text-neutral-900">{title}</h1>
-        <ExampleCard />
+      <div className="w-[300px] mx-auto py-2 px-2 bg-gradient-to-b from-black to-gray-900">
+        <h1 className="text-3xl font-mono font-bold text-center mb-4 text-cyan-400 tracking-widest">{title}</h1>
+        <CyberpunkCard />
       </div>
     </div>
   );
